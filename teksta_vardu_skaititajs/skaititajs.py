@@ -1,17 +1,17 @@
 teksts = ""
-with open("./teksts.txt", "r", encoding="utf-8") as f:
+with open("teksts.txt", "r", encoding="utf-8") as f:
     teksts = f.read()
 
 vardi = teksts.split()
 for i in range(len(vardi)):
-    vardi[i] = vardi[i].strip(".,!-?*\'\")(")
+    vardi[i] = vardi[i].strip(".,!-?*\'\")(1234567890")
     vardi[i] = vardi[i].lower()
 
 visi_vardi = {}
 
 for vards in vardi:
     if vards in visi_vardi:
-        visi_vardi[vards] +=1
+        visi_vardi[vards] += 1
     else:
         visi_vardi[vards] = 1
 
@@ -24,4 +24,5 @@ for viens in visi_vardi:
         biezakais_vards = viens
         varda_skaits = visi_vardi[viens]
 
-print (biezakais_vards, varda_skaits)
+print(biezakais_vards, varda_skaits)
+         
