@@ -1,5 +1,5 @@
 teksts = ""
-with open("teksta_vardu_skaititajs/teksts.txt", "r", encoding="utf-8") as f:
+with open("./teksts.txt", "r", encoding="utf-8") as f:
     teksts = f.read()
 
 vardi = teksts.split()
