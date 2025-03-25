@@ -23,6 +23,23 @@ for viens in visi_vardi:
     if visi_vardi[viens] > varda_skaits:
         biezakais_vards = viens
         varda_skaits = visi_vardi[viens]
+    
+def vardi_pec_saknes(vardi):
+    saknes = {}
+    for vards in vardi:
+        sakne = vards[0:4] if len(vards) >= 4 else vards
+        if sakne in saknes:
+            saknes[sakne].append(vards)
+        else:
+            saknes[sakne] = [vards]
+    return saknes
+
+def biezakie_vardi(visi_vardi, skaits=5):
+    sakartoti_vardi = sorted(visi_vardi.items(), key=lambda x: x[1], reverse=True)
+    return sakartoti_vardi[:skaits]
+
+biez_vardi = biezakie_vardi(visi_vardi)
 
 print(biezakais_vards, varda_skaits)
+print(biez_vardi)
          
